@@ -35,3 +35,15 @@ const fs = require('fs')
 // delete directory
 // fs.rmdirSync('./temp')
 
+
+
+// Blocking and Non-Blocking Concept
+
+// Sync | Blocking
+// fs.writeFileSync("./test/txt", "Hello World");
+
+// Default thread pool size depends on the CPU cores and threads
+
+// Async | Non-Blocking
+// fs.writeFile("./text.txt", "Hello World Async", (err) => {});
+
