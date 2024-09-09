@@ -7,18 +7,25 @@ const PORT = 8000
 
 // Routes
 
-// route for api
+// Route for api
 app.get("/api/users", (req, res) => {
-    res.json(users)
+    return res.json(users)
 })
-// same route for html doc to build a hybrid server
+// Same route for html doc to build a hybrid server
 app.get("/users", (req, res) => {
     const html = `
     <ul>
         ${users.map((user) => `<li>${user.first_name}</li>`).join('')}
     </ul>
     `;
-    res.send(html);
+    return res.send(html);
+})
+
+// Dynamic Route to get specific user data (By id)
+app.get("/api/users/:id", (req, res) => {
+    const id = Number(req.params.id)
+    const user = users.find((user) => user.id === id)
+    return res.json(user)
 })
 
 app.listen(PORT, () => console.log(`Server has started at ${PORT}.`))
