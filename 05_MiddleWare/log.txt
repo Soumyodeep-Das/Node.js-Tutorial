@@ -1,0 +1,4 @@
+
+1725972514787 -> IP: ::1 ; GET : /api/users
+1725972524262 -> IP: ::1 ; POST : /api/users
+1725972530904 -> IP: ::1 ; DELETE : /api/users/10
